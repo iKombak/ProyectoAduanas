@@ -2,13 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.ventanaprincipal;
+package main;
+
+import com.mycompany.ventanaprincipal.interfaz.Ventana_Menu;
 
 /**
  *
  * @author enzo
  */
-public class VentanaPrincipal {
+public class ParkingAduanas {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");

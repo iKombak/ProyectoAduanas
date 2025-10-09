@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.ventanaprincipal;
+package com.mycompany.ventanaprincipal.interfaz;
 
 /**
  *
@@ -39,7 +39,6 @@ public class Ventana_Menu extends javax.swing.JFrame {
         btn_verEstacionamiento2 = new javax.swing.JButton();
         btn_verEstacionamiento3 = new javax.swing.JButton();
         btn_verEstacionamiento4 = new javax.swing.JButton();
-        jFileChooser1 = new javax.swing.JFileChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ADUANAS");
@@ -90,19 +89,16 @@ public class Ventana_Menu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(img_logos)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 303, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_gestionarFuncionarios)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btn_verEstacionamiento)
-                                .addComponent(btn_gestionarVehiculos)
-                                .addComponent(btn_gestionarImportadores1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
-                        .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_verEstacionamiento)
+                            .addComponent(btn_gestionarVehiculos)
+                            .addComponent(btn_gestionarImportadores1)
+                            .addComponent(btn_gestionarFuncionarios))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_salir)
@@ -117,22 +113,16 @@ public class Ventana_Menu extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(img_logos)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_verEstacionamiento)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_gestionarImportadores1)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_gestionarVehiculos)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_gestionarFuncionarios)
-                        .addGap(14, 14, 14))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 32, Short.MAX_VALUE)
-                        .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(img_logos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(btn_verEstacionamiento)
+                .addGap(18, 18, 18)
+                .addComponent(btn_gestionarImportadores1)
+                .addGap(18, 18, 18)
+                .addComponent(btn_gestionarVehiculos)
+                .addGap(18, 18, 18)
+                .addComponent(btn_gestionarFuncionarios)
+                .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_salir)
                     .addComponent(btn_verEstacionamiento1, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -181,7 +171,6 @@ public class Ventana_Menu extends javax.swing.JFrame {
     private javax.swing.JButton btn_verEstacionamiento3;
     private javax.swing.JButton btn_verEstacionamiento4;
     private javax.swing.JLabel img_logos;
-    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
