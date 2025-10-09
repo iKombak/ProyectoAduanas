@@ -38,10 +38,23 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lbl_fotoAduanas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="209" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lbl_fotoAduanas" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btn_GestionImporAutos" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_verEstacionamiento" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_GestionFuncionarios" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_salir" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="310" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -49,7 +62,15 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="lbl_fotoAduanas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="386" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="btn_verEstacionamiento" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="btn_GestionImporAutos" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="btn_GestionFuncionarios" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btn_salir" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="288" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -58,8 +79,28 @@
         <Component class="javax.swing.JLabel" name="lbl_fotoAduanas">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/home/enzo/Descargas/logo_web 1.png"/>
+              <Image iconType="3" name="/images/logo_web 1.png"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_verEstacionamiento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="VER ESTACIONAMIENTO"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_GestionImporAutos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="GESTIONAR IMPORTADORES / VEHICULOS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_GestionFuncionarios">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="GESTIONAR FUNCIONARIOS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_salir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SALIR"/>
           </Properties>
         </Component>
       </SubComponents>

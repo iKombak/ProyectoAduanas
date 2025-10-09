@@ -30,25 +30,54 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
         pnl_menu = new javax.swing.JPanel();
         lbl_fotoAduanas = new javax.swing.JLabel();
+        btn_verEstacionamiento = new javax.swing.JButton();
+        btn_GestionImporAutos = new javax.swing.JButton();
+        btn_GestionFuncionarios = new javax.swing.JButton();
+        btn_salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbl_fotoAduanas.setIcon(new javax.swing.ImageIcon("/home/enzo/Descargas/logo_web 1.png")); // NOI18N
+        lbl_fotoAduanas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_web 1.png"))); // NOI18N
+
+        btn_verEstacionamiento.setText("VER ESTACIONAMIENTO");
+
+        btn_GestionImporAutos.setText("GESTIONAR IMPORTADORES / VEHICULOS");
+
+        btn_GestionFuncionarios.setText("GESTIONAR FUNCIONARIOS");
+
+        btn_salir.setText("SALIR");
 
         javax.swing.GroupLayout pnl_menuLayout = new javax.swing.GroupLayout(pnl_menu);
         pnl_menu.setLayout(pnl_menuLayout);
         pnl_menuLayout.setHorizontalGroup(
             pnl_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_menuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_fotoAduanas)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addGroup(pnl_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_menuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbl_fotoAduanas))
+                    .addGroup(pnl_menuLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(pnl_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_GestionImporAutos)
+                            .addComponent(btn_verEstacionamiento)
+                            .addComponent(btn_GestionFuncionarios)
+                            .addComponent(btn_salir))))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
         pnl_menuLayout.setVerticalGroup(
             pnl_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_menuLayout.createSequentialGroup()
                 .addComponent(lbl_fotoAduanas)
-                .addGap(0, 386, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(btn_verEstacionamiento)
+                .addGap(29, 29, 29)
+                .addComponent(btn_GestionImporAutos)
+                .addGap(27, 27, 27)
+                .addComponent(btn_GestionFuncionarios)
+                .addGap(18, 18, 18)
+                .addComponent(btn_salir)
+                .addGap(0, 288, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,6 +120,10 @@ public class Ventana_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_GestionFuncionarios;
+    private javax.swing.JButton btn_GestionImporAutos;
+    private javax.swing.JButton btn_salir;
+    private javax.swing.JButton btn_verEstacionamiento;
     private javax.swing.JLabel lbl_fotoAduanas;
     private javax.swing.JPanel pnl_menu;
     // End of variables declaration//GEN-END:variables
