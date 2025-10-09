@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.parkingaduanas.persistencia;
+package com.mycompany.parkingaduanas.logica;
 
 /**
  *
  * @author enzo
  */
-public class asda {
+public class Controladora {
     
 }
