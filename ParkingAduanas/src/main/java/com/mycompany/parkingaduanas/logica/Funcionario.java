@@ -1,7 +1,11 @@
 package com.mycompany.parkingaduanas.logica;
 
+import javax.persistence.*;
+
+@Entity
 public class Funcionario {
     //ATRIBUTOS
+    @Id
     private String CI;
     private String NombreCompleto;
     private String CorreoElectronico;
@@ -9,6 +13,7 @@ public class Funcionario {
     
     //COSTRUCTORES
     //Por Defecto
+    
     public Funcionario() {
         this.CI = "9999999999";
         this.NombreCompleto = "Alvaro Recoba";
@@ -27,6 +32,40 @@ public class Funcionario {
     
     
     //Setters
+
+    public String getCI() {
+        return CI;
+    }
+
+    public void setCI(String CI) {
+        this.CI = CI;
+    }
+
+    public String getNombreCompleto() {
+        return NombreCompleto;
+    }
+
+    public void setNombreCompleto(String NombreCompleto) {
+        this.NombreCompleto = NombreCompleto;
+    }
+
+    public String getCorreoElectronico() {
+        return CorreoElectronico;
+    }
+
+    public void setCorreoElectronico(String CorreoElectronico) {
+        this.CorreoElectronico = CorreoElectronico;
+    }
+
+    public int getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(int Telefono) {
+        this.Telefono = Telefono;
+    }
+
+
 
 
 

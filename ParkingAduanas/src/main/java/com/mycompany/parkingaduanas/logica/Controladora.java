@@ -4,10 +4,13 @@
  */
 package com.mycompany.parkingaduanas.logica;
 
+import com.mycompany.parkingaduanas.persistencia.ControladoraPersistencia;
+
 /**
  *
  * @author enzo
  */
 public class Controladora {
+    ControladoraPersistencia controlPersistencia = new ControladoraPersistencia();
     
 }

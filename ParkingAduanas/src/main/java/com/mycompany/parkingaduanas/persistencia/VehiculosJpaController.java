@@ -6,10 +6,8 @@ package com.mycompany.parkingaduanas.persistencia;
 
 /**
  *
- * @author enzo
+ * @author Brian
  */
-public class ControladoraPersistencia {
-    
-    FuncionarioJpaController funcionarioJpa = new FuncionarioJpaController();
+public class VehiculosJpaController {
     
 }
