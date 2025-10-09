@@ -9,7 +9,7 @@ import java.util.Date;
  *
  * @author enzo
  */
-
+@Entity
 public class Vehiculos {
     
     String marca;
