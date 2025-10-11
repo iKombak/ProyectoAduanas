@@ -79,7 +79,7 @@
         <Component class="javax.swing.JLabel" name="lbl_fotoAduanas">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/logo_web 1.png"/>
+              <Image iconType="3" name="/images/logo_web1.png"/>
             </Property>
           </Properties>
         </Component>
@@ -87,6 +87,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="VER ESTACIONAMIENTO"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_verEstacionamientoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_GestionImporAutos">
           <Properties>
