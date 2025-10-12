@@ -39,8 +39,6 @@ public class Ventana_Parking extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabel_vehiculosParking = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_web1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -193,41 +191,14 @@ public class Ventana_Parking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_anadir;
-    private javax.swing.JButton btn_anadir1;
-    private javax.swing.JButton btn_anadir2;
-    private javax.swing.JButton btn_anadir3;
-    private javax.swing.JButton btn_anadir4;
-    private javax.swing.JButton btn_anadir5;
-    private javax.swing.JButton btn_anadir6;
-    private javax.swing.JButton btn_anadir7;
-    private javax.swing.JButton btn_anadir8;
     private javax.swing.JButton btn_anadir9;
     private javax.swing.JButton btn_eliminar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabel_vehiculosParking;
     // End of variables declaration//GEN-END:variables
