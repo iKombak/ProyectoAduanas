@@ -56,6 +56,11 @@ public class Ventana_Principal extends javax.swing.JFrame {
         });
 
         btn_salir.setText("SALIR");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_menuLayout = new javax.swing.GroupLayout(pnl_menu);
         pnl_menu.setLayout(pnl_menuLayout);
@@ -117,6 +122,11 @@ public class Ventana_Principal extends javax.swing.JFrame {
         ventana_funcionarios.setVisible(true);
         ventana_funcionarios.setLocationRelativeTo(null);
     }//GEN-LAST:event_btn_GestionFuncionariosActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btn_salirActionPerformed
 
 
 

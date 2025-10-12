@@ -54,7 +54,7 @@
                       <Component id="pnl_aniadirFuncionarios" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -243,35 +243,29 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lbl_ingresarNombre" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="txt_AniadirNombre" min="-2" pref="161" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lbl_ingresarCI" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_ingresarCorreo" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbl_telefono" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                                      <Component id="txt_AniadirTelefono" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lbl_ingresarNombre" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txt_AniadirNombre" min="-2" pref="161" max="-2" attributes="0"/>
-                                          <Component id="txt_AniadirApellido" min="-2" pref="161" max="-2" attributes="0"/>
-                                      </Group>
+                                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txt_AniadirCorreo" alignment="1" min="-2" pref="161" max="-2" attributes="0"/>
+                                      <Component id="txt_AniadirTelefono" alignment="1" min="-2" pref="161" max="-2" attributes="0"/>
+                                      <Component id="txt_AniadirCI" alignment="1" min="-2" pref="161" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="lbl_ingresarApellido" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lbl_ingresarCI" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="lbl_ingresarCorreo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txt_AniadirCorreo" pref="231" max="32767" attributes="0"/>
-                                      <Component id="txt_AniadirCI" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="lbl_ingresarApellido" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="txt_AniadirApellido" min="-2" pref="161" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -287,36 +281,30 @@
                   <Component id="lbl_aniadirFuncionarios" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Component id="lbl_ingresarNombre" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lbl_ingresarApellido" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_AniadirApellido" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="30" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_AniadirCI" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbl_ingresarCI" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lbl_ingresarCorreo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_AniadirCorreo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lbl_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_AniadirTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="txt_AniadirNombre" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="txt_AniadirNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_ingresarNombre" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbl_ingresarApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_AniadirApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txt_AniadirTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbl_ingresarCI" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="txt_AniadirCI" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="lbl_ingresarCorreo" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_AniadirCorreo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
