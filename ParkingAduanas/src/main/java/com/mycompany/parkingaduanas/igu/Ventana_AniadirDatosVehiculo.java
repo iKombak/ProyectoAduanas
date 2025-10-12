@@ -35,7 +35,7 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
     private void initComponents() {
 
         pnl_DatosVehiculos = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_seleccionarFoto = new javax.swing.JLabel();
         btn_seleccionarFoto = new javax.swing.JButton();
         lbl_Foto = new javax.swing.JLabel();
 
@@ -43,7 +43,7 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
 
         pnl_DatosVehiculos.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingresar Datos Vehiculos"));
 
-        jLabel1.setText("Ingresar Foto Vehiculo");
+        lbl_seleccionarFoto.setText("Ingresar Foto Vehiculo");
 
         btn_seleccionarFoto.setText("SELECCIONAR FOTO");
         btn_seleccionarFoto.addActionListener(new java.awt.event.ActionListener() {
@@ -51,8 +51,6 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
                 btn_seleccionarFotoActionPerformed(evt);
             }
         });
-
-        lbl_Foto.setText("jLabel2");
 
         javax.swing.GroupLayout pnl_DatosVehiculosLayout = new javax.swing.GroupLayout(pnl_DatosVehiculos);
         pnl_DatosVehiculos.setLayout(pnl_DatosVehiculosLayout);
@@ -63,7 +61,7 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
                 .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_Foto)
                     .addGroup(pnl_DatosVehiculosLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_seleccionarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btn_seleccionarFoto)))
                 .addContainerGap(55, Short.MAX_VALUE))
@@ -73,11 +71,11 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
             .addGroup(pnl_DatosVehiculosLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(lbl_seleccionarFoto)
                     .addComponent(btn_seleccionarFoto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_Foto)
-                .addContainerGap(390, Short.MAX_VALUE))
+                .addContainerGap(406, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,8 +148,8 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_seleccionarFoto;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Foto;
+    private javax.swing.JLabel lbl_seleccionarFoto;
     private javax.swing.JPanel pnl_DatosVehiculos;
     // End of variables declaration//GEN-END:variables
 }
