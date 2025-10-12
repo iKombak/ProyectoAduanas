@@ -16,5 +16,6 @@ public class ParkingAduanas {
         System.out.println("Hello World!");
         Ventana_Principal ventana = new Ventana_Principal();
         ventana.setVisible(true);
+        ventana.setLocationRelativeTo(null);
     }
 }

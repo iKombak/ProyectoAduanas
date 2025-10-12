@@ -38,8 +38,18 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
         lbl_seleccionarFoto = new javax.swing.JLabel();
         btn_seleccionarFoto = new javax.swing.JButton();
         lbl_Foto = new javax.swing.JLabel();
+        lbl_idVehiculo = new javax.swing.JLabel();
+        lbl_fecha = new javax.swing.JLabel();
+        lbl_funcionario = new javax.swing.JLabel();
+        lbl_departamentos = new javax.swing.JLabel();
+        cmb_departamentos = new javax.swing.JComboBox<>();
+        txt_fecha = new javax.swing.JFormattedTextField();
+        txt_idVehiculo = new javax.swing.JTextField();
+        cmb_funcionarios = new javax.swing.JComboBox<>();
+        btn_anadir = new javax.swing.JButton();
+        btn_salir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         pnl_DatosVehiculos.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingresar Datos Vehiculos"));
 
@@ -52,19 +62,63 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
             }
         });
 
+        lbl_idVehiculo.setText("ID del vehiculo:");
+
+        lbl_fecha.setText("Fecha de ingreso:");
+
+        lbl_funcionario.setText("Funcionario:");
+
+        lbl_departamentos.setText("Departamento:");
+
+        cmb_departamentos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Artigas", "Canelones", "Cerro Largo", "Colonia", "Durazno", "Flores", "Florida", "Lavalleja", "Maldonado", "Montevideo", "Paysandú", "Río Negro", "Rivera", "Rocha", "Salto", "San José", "Soriano", "Tacuarembó", "Treinta y Tres" }));
+
+        txt_fecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        txt_fecha.setText("00/00/00");
+
+        cmb_funcionarios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btn_anadir.setText("AÑADIR");
+
+        btn_salir.setText("SALIR");
+
         javax.swing.GroupLayout pnl_DatosVehiculosLayout = new javax.swing.GroupLayout(pnl_DatosVehiculos);
         pnl_DatosVehiculos.setLayout(pnl_DatosVehiculosLayout);
         pnl_DatosVehiculosLayout.setHorizontalGroup(
             pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_DatosVehiculosLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_Foto)
+                .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnl_DatosVehiculosLayout.createSequentialGroup()
-                        .addComponent(lbl_seleccionarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_seleccionarFoto)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnl_DatosVehiculosLayout.createSequentialGroup()
+                                .addComponent(lbl_fecha)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbl_Foto)
+                            .addGroup(pnl_DatosVehiculosLayout.createSequentialGroup()
+                                .addComponent(lbl_seleccionarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_seleccionarFoto))
+                            .addGroup(pnl_DatosVehiculosLayout.createSequentialGroup()
+                                .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_funcionario)
+                                    .addComponent(lbl_departamentos))
+                                .addGap(25, 25, 25)
+                                .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cmb_departamentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmb_funcionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnl_DatosVehiculosLayout.createSequentialGroup()
+                        .addComponent(lbl_idVehiculo)
+                        .addGap(23, 23, 23)
+                        .addComponent(txt_idVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(157, 157, 157))))
+            .addGroup(pnl_DatosVehiculosLayout.createSequentialGroup()
+                .addGap(136, 136, 136)
+                .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_anadir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnl_DatosVehiculosLayout.setVerticalGroup(
             pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,7 +129,27 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
                     .addComponent(btn_seleccionarFoto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_Foto)
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_idVehiculo)
+                    .addComponent(txt_idVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_fecha)
+                    .addComponent(txt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_funcionario)
+                    .addComponent(cmb_funcionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(pnl_DatosVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_departamentos)
+                    .addComponent(cmb_departamentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
+                .addComponent(btn_anadir)
+                .addGap(18, 18, 18)
+                .addComponent(btn_salir)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -147,9 +221,19 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_anadir;
+    private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_seleccionarFoto;
+    private javax.swing.JComboBox<String> cmb_departamentos;
+    private javax.swing.JComboBox<String> cmb_funcionarios;
     private javax.swing.JLabel lbl_Foto;
+    private javax.swing.JLabel lbl_departamentos;
+    private javax.swing.JLabel lbl_fecha;
+    private javax.swing.JLabel lbl_funcionario;
+    private javax.swing.JLabel lbl_idVehiculo;
     private javax.swing.JLabel lbl_seleccionarFoto;
     private javax.swing.JPanel pnl_DatosVehiculos;
+    private javax.swing.JFormattedTextField txt_fecha;
+    private javax.swing.JTextField txt_idVehiculo;
     // End of variables declaration//GEN-END:variables
 }
