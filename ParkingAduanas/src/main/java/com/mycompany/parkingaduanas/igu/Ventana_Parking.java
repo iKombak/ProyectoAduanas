@@ -162,7 +162,9 @@ public class Ventana_Parking extends javax.swing.JFrame {
 
     private void btn_anadir9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_anadir9ActionPerformed
         // TODO add your handling code here:
-
+        Ventana_AniadirDatosVehiculo ventanita = new Ventana_AniadirDatosVehiculo();
+        ventanita.setVisible(true);
+               
     }//GEN-LAST:event_btn_anadir9ActionPerformed
 
     /**
