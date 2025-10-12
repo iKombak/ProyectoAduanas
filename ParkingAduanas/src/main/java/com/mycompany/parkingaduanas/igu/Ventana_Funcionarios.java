@@ -4,6 +4,12 @@
  */
 package com.mycompany.parkingaduanas.igu;
 
+import java.awt.Dimension;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author Brian
@@ -11,7 +17,8 @@ package com.mycompany.parkingaduanas.igu;
 public class Ventana_Funcionarios extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ventana_Funcionarios.class.getName());
-
+    private File imagenSeleccionada;
+    
     /**
      * Creates new form NewJFrame
      */
@@ -49,6 +56,9 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
         txt_AniadirCorreo = new javax.swing.JTextField();
         txt_AniadirTelefono = new javax.swing.JTextField();
         txt_AniadirCI = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lbl_AniadirFoto = new javax.swing.JLabel();
         pnl_infoFuncionario = new javax.swing.JPanel();
         lbl_infoFuncionario = new javax.swing.JLabel();
         lbl_mostarNombre = new javax.swing.JLabel();
@@ -61,6 +71,7 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
         txt_mostrarCorreo = new javax.swing.JTextField();
         txt_mostrarTelefono = new javax.swing.JTextField();
         txt_mostrarCI = new javax.swing.JTextField();
+        lbl_verFoto = new javax.swing.JLabel();
 
         lbl_logoAduana.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_web1.png"))); // NOI18N
 
@@ -103,12 +114,10 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
             pnl_accionesAniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_accionesAniadirFuncionariosLayout.createSequentialGroup()
                 .addGroup(pnl_accionesAniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnl_accionesAniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(pnl_accionesAniadirFuncionariosLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(btn_aniadirfunc, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))
-                        .addGroup(pnl_accionesAniadirFuncionariosLayout.createSequentialGroup()
-                            .addContainerGap()
+                    .addGroup(pnl_accionesAniadirFuncionariosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnl_accionesAniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_aniadirfunc, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                             .addComponent(btn_limpiarfunc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnl_accionesAniadirFuncionariosLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -181,10 +190,32 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("AÑADIR FOTO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("SELECCIONAR FOTO");
+
+        lbl_AniadirFoto.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lbl_AniadirFoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lbl_AniadirFoto.setMaximumSize(new java.awt.Dimension(120, 160));
+        lbl_AniadirFoto.setMinimumSize(new java.awt.Dimension(120, 160));
+        lbl_AniadirFoto.setOpaque(true);
+        lbl_AniadirFoto.setPreferredSize(new java.awt.Dimension(120, 160));
+
         javax.swing.GroupLayout pnl_aniadirFuncionariosLayout = new javax.swing.GroupLayout(pnl_aniadirFuncionarios);
         pnl_aniadirFuncionarios.setLayout(pnl_aniadirFuncionariosLayout);
         pnl_aniadirFuncionariosLayout.setHorizontalGroup(
             pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_aniadirFuncionariosLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(15, 15, 15))
             .addGroup(pnl_aniadirFuncionariosLayout.createSequentialGroup()
                 .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnl_aniadirFuncionariosLayout.createSequentialGroup()
@@ -193,25 +224,22 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                     .addGroup(pnl_aniadirFuncionariosLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnl_aniadirFuncionariosLayout.createSequentialGroup()
-                                .addComponent(lbl_ingresarNombre)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txt_AniadirNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnl_aniadirFuncionariosLayout.createSequentialGroup()
-                                .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_ingresarCI)
-                                    .addComponent(lbl_ingresarCorreo)
-                                    .addComponent(lbl_telefono))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                                .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_AniadirCorreo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_AniadirTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_AniadirCI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(pnl_aniadirFuncionariosLayout.createSequentialGroup()
-                                .addComponent(lbl_ingresarApellido)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txt_AniadirApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(157, 157, 157))
+                            .addComponent(lbl_ingresarApellido)
+                            .addComponent(lbl_ingresarNombre)
+                            .addComponent(lbl_ingresarCI)
+                            .addComponent(lbl_ingresarCorreo)
+                            .addComponent(lbl_telefono))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_AniadirNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_AniadirCorreo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_AniadirTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_AniadirCI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_AniadirApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addComponent(lbl_AniadirFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         pnl_aniadirFuncionariosLayout.setVerticalGroup(
             pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,25 +248,32 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                 .addComponent(lbl_aniadirFuncionarios)
                 .addGap(18, 18, 18)
                 .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_AniadirNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_ingresarNombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(pnl_aniadirFuncionariosLayout.createSequentialGroup()
+                        .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_AniadirNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_ingresarNombre))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl_ingresarApellido)
+                            .addComponent(txt_AniadirApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_AniadirTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_telefono))
+                        .addGap(28, 28, 28)
+                        .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl_ingresarCI, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_AniadirCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14)
+                        .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbl_ingresarCorreo)
+                            .addComponent(txt_AniadirCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lbl_AniadirFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_ingresarApellido)
-                    .addComponent(txt_AniadirApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_AniadirTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_telefono))
-                .addGap(18, 18, 18)
-                .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_ingresarCI, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_AniadirCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(pnl_aniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_ingresarCorreo)
-                    .addComponent(txt_AniadirCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jLabel1))
+                .addContainerGap())
         );
 
         lbl_infoFuncionario.setText("INFORMACION DE FUNCIONARIO:");
@@ -299,7 +334,9 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                                     .addComponent(txt_mostrarCorreo)
                                     .addComponent(txt_mostrarCI)
                                     .addComponent(txt_mostrarApellido))))))
-                .addGap(282, 282, 282))
+                .addGap(239, 239, 239)
+                .addComponent(lbl_verFoto)
+                .addContainerGap())
         );
         pnl_infoFuncionarioLayout.setVerticalGroup(
             pnl_infoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,7 +350,8 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnl_infoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbl_mostarApellido)
-                            .addComponent(txt_mostrarApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_mostrarApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_verFoto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                         .addGroup(pnl_infoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txt_mostrarCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -392,7 +430,35 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
         txt_AniadirCI.setText("");
         txt_AniadirNombre.setText("");
         txt_AniadirTelefono.setText("");
+        lbl_AniadirFoto.setIcon(null);
     }//GEN-LAST:event_btn_limpiarfuncActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        int resultado = chooser.showOpenDialog(this);
+
+        if (resultado == JFileChooser.APPROVE_OPTION) {
+            File archivo = chooser.getSelectedFile();
+
+            // Cargar la imagen original
+            ImageIcon iconoOriginal = new ImageIcon(archivo.getAbsolutePath());
+
+            Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(
+                    lbl_AniadirFoto.getWidth(),
+                    lbl_AniadirFoto.getHeight(),
+                    Image.SCALE_SMOOTH
+            );
+
+            // Crear un nuevo icono con la imagen escalada
+            ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
+
+            // 🔒 Bloquear el tamaño y posición para evitar movimientos
+            lbl_AniadirFoto.setIcon(iconoEscalado);
+
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
 
@@ -403,6 +469,9 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
     private javax.swing.JButton btn_salirdefunc;
     private javax.swing.JButton btn_verInfoFunc;
     private javax.swing.JComboBox<String> cmbox_funcionarios;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lbl_AniadirFoto;
     private javax.swing.JLabel lbl_aniadirFuncionarios;
     private javax.swing.JLabel lbl_infoFuncionario;
     private javax.swing.JLabel lbl_ingresarApellido;
@@ -416,6 +485,7 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_mostarNombre;
     private javax.swing.JLabel lbl_mostarTelefono;
     private javax.swing.JLabel lbl_telefono;
+    private javax.swing.JLabel lbl_verFoto;
     private javax.swing.JPanel pnl_acciones;
     private javax.swing.JPanel pnl_accionesAniadirFuncionarios;
     private javax.swing.JPanel pnl_aniadirFuncionarios;
