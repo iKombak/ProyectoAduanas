@@ -4,6 +4,7 @@
  */
 package com.mycompany.parkingaduanas.igu;
 
+import com.mycompany.parkingaduanas.logica.Controladora;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
@@ -15,6 +16,8 @@ import javax.swing.JFileChooser;
  * @author Brian
  */
 public class Ventana_Funcionarios extends javax.swing.JFrame {
+    
+    Controladora control= new Controladora();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ventana_Funcionarios.class.getName());
     private File imagenSeleccionada;
@@ -107,6 +110,11 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
         });
 
         btn_aniadirfunc.setText("AÑADIR FUNCIONARIO");
+        btn_aniadirfunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_aniadirfuncActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_accionesAniadirFuncionariosLayout = new javax.swing.GroupLayout(pnl_accionesAniadirFuncionarios);
         pnl_accionesAniadirFuncionarios.setLayout(pnl_accionesAniadirFuncionariosLayout);
@@ -117,7 +125,7 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                     .addGroup(pnl_accionesAniadirFuncionariosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pnl_accionesAniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_aniadirfunc, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                            .addComponent(btn_aniadirfunc, javax.swing.GroupLayout.PREFERRED_SIZE, 163, Short.MAX_VALUE)
                             .addComponent(btn_limpiarfunc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnl_accionesAniadirFuncionariosLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -133,7 +141,7 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                 .addComponent(btn_limpiarfunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_salirdefunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnl_accionesLayout = new javax.swing.GroupLayout(pnl_acciones);
@@ -167,7 +175,7 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                 .addComponent(btn_verInfoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_eliminarFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(pnl_accionesAniadirFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -459,6 +467,17 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btn_aniadirfuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aniadirfuncActionPerformed
+        // TODO add your handling code here:
+        String nombre = txt_AniadirNombre.getText();
+        String apellido = txt_AniadirApellido.getText();
+        String telefono = txt_AniadirTelefono.getText();
+        String CI = txt_AniadirCI.getText();
+        String correo = txt_AniadirCorreo.getText();
+        
+       control.guardar(CI,nombre,apellido,correo,telefono);
+    }//GEN-LAST:event_btn_aniadirfuncActionPerformed
 
 
 

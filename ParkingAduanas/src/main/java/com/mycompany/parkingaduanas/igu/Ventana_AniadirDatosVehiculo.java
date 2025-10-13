@@ -4,6 +4,7 @@
  */
 package com.mycompany.parkingaduanas.igu;
 
+import com.mycompany.parkingaduanas.logica.Controladora;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
@@ -14,6 +15,8 @@ import javax.swing.JFileChooser;
  * @author Brian
  */
 public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
+    
+    Controladora control= new Controladora();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ventana_AniadirDatosVehiculo.class.getName());
     private File imagenSeleccionada;
@@ -73,11 +76,15 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
         cmb_departamentos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Artigas", "Canelones", "Cerro Largo", "Colonia", "Durazno", "Flores", "Florida", "Lavalleja", "Maldonado", "Montevideo", "Paysandú", "Río Negro", "Rivera", "Rocha", "Salto", "San José", "Soriano", "Tacuarembó", "Treinta y Tres" }));
 
         txt_fecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        txt_fecha.setText("00/00/00");
 
         cmb_funcionarios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btn_anadir.setText("AÑADIR");
+        btn_anadir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_anadirActionPerformed(evt);
+            }
+        });
 
         btn_salir.setText("SALIR");
 
@@ -194,6 +201,13 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btn_seleccionarFotoActionPerformed
+
+    private void btn_anadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_anadirActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+    }//GEN-LAST:event_btn_anadirActionPerformed
 
 
 

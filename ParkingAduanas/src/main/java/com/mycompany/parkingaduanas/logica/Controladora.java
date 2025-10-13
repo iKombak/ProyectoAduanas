@@ -12,5 +12,17 @@ import com.mycompany.parkingaduanas.persistencia.ControladoraPersistencia;
  */
 public class Controladora {
     ControladoraPersistencia controlPersistencia = new ControladoraPersistencia();
+
+    public void guardar(String CI, String nombre, String apellido, String correo, String telefono) {
+       
+        Funcionario func = new Funcionario();
+        func.setCI(CI);
+        func.setNombre(nombre);
+        func.setApellido(apellido);
+        func.setCorreoElectronico(correo);
+        func.setTelefono(telefono);
+        
+        controlPersistencia.guardar(func);
+    }
     
 }

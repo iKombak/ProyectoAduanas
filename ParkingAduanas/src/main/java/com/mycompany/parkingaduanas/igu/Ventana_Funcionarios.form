@@ -118,7 +118,7 @@
                   <Component id="btn_verInfoFunc" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btn_eliminarFunc" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace pref="43" max="32767" attributes="0"/>
                   <Component id="pnl_accionesAniadirFuncionarios" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -196,7 +196,7 @@
                       <Component id="btn_limpiarfunc" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btn_salirdefunc" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -222,6 +222,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="A&#xd1;ADIR FUNCIONARIO"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_aniadirfuncActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
