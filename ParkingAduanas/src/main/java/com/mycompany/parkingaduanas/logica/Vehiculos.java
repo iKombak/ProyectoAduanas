@@ -13,6 +13,10 @@ import javax.persistence.Entity;
 @Entity
 public class Vehiculos {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)        
+    int id;
+    
     String marca;
     
     String modelo;
@@ -26,6 +30,24 @@ public class Vehiculos {
     String departamento;
 
     public Vehiculos() {
+    }
+
+    public Vehiculos(int id, String marca, String modelo, String VIN, String num_Motor, Date fechaActual, String departamento) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.VIN = VIN;
+        this.num_Motor = num_Motor;
+        this.fechaActual = fechaActual;
+        this.departamento = departamento;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMarca() {
@@ -75,10 +97,7 @@ public class Vehiculos {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
-    
-    
-    
-    
-    
+
+   
     
 }

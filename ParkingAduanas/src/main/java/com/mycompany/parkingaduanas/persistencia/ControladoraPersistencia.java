@@ -4,6 +4,8 @@
  */
 package com.mycompany.parkingaduanas.persistencia;
 
+import com.mycompany.parkingaduanas.logica.Funcionario;
+
 /**
  *
  * @author enzo
@@ -11,5 +13,9 @@ package com.mycompany.parkingaduanas.persistencia;
 public class ControladoraPersistencia {
     
     FuncionarioJpaController funcionarioJpa = new FuncionarioJpaController();
+
+    public void guardar(Funcionario func) {
+        funcionarioJpa.create(func);
+    }
     
 }

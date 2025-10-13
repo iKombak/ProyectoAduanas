@@ -7,31 +7,24 @@ public class Funcionario {
     //ATRIBUTOS
     @Id
     private String CI;
-    private String NombreCompleto;
+    private String nombre;
+    private String apellido;
     private String CorreoElectronico;
-    private int Telefono;
+    private String Telefono;
     
     //COSTRUCTORES
     //Por Defecto
-    
+
     public Funcionario() {
-        this.CI = "9999999999";
-        this.NombreCompleto = "Alvaro Recoba";
-        this.CorreoElectronico = "decano@cndf.com.uy";
-        this.Telefono = 99112233;
     }
-    //Especifico
-    public Funcionario(String CI, String NombreCompleto, String CorreoElectronico, int Telefono) {
+
+    public Funcionario(String CI, String nombre, String apellido, String CorreoElectronico, String Telefono) {
         this.CI = CI;
-        this.NombreCompleto = NombreCompleto;
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.CorreoElectronico = CorreoElectronico;
         this.Telefono = Telefono;
     }
-    //GETTERS Y SETTERS
-    //Getters
-    
-    
-    //Setters
 
     public String getCI() {
         return CI;
@@ -41,12 +34,20 @@ public class Funcionario {
         this.CI = CI;
     }
 
-    public String getNombreCompleto() {
-        return NombreCompleto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCompleto(String NombreCompleto) {
-        this.NombreCompleto = NombreCompleto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getCorreoElectronico() {
@@ -57,15 +58,17 @@ public class Funcionario {
         this.CorreoElectronico = CorreoElectronico;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return Telefono;
     }
 
-    public void setTelefono(int Telefono) {
+    public void setTelefono(String Telefono) {
         this.Telefono = Telefono;
     }
 
-
+    
+    
+    
 
 
 
