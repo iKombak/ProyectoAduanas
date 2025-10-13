@@ -95,6 +95,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="GESTIONAR IMPORTADORES / VEHICULOS"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_GestionImporAutosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_GestionFuncionarios">
           <Properties>

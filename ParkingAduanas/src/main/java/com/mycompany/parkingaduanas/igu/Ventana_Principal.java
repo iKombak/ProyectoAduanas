@@ -47,6 +47,11 @@ public class Ventana_Principal extends javax.swing.JFrame {
         });
 
         btn_GestionImporAutos.setText("GESTIONAR IMPORTADORES / VEHICULOS");
+        btn_GestionImporAutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_GestionImporAutosActionPerformed(evt);
+            }
+        });
 
         btn_GestionFuncionarios.setText("GESTIONAR FUNCIONARIOS");
         btn_GestionFuncionarios.addActionListener(new java.awt.event.ActionListener() {
@@ -127,6 +132,12 @@ public class Ventana_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void btn_GestionImporAutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GestionImporAutosActionPerformed
+        // TODO add your handling code here:
+        Ventana_Importador ventana = new Ventana_Importador();
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btn_GestionImporAutosActionPerformed
 
 
 
