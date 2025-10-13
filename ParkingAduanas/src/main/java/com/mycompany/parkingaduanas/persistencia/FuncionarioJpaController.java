@@ -1,29 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.parkingaduanas.persistencia;
 
 import com.mycompany.parkingaduanas.logica.Funcionario;
+import com.mycompany.parkingaduanas.persistencia.exceptions.NonexistentEntityException;
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.*;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
+import javax.persistence.Persistence;
 
-/**
- *
- * @author Brian
- */
-public class FuncionarioJpaController {
+public class FuncionarioJpaController implements Serializable {
 
     private EntityManagerFactory emf = null;
 
-    public FuncionarioJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    
     public FuncionarioJpaController() {
+        // Debe coincidir con el nombre del persistence-unit en tu persistence.xml
         emf = Persistence.createEntityManagerFactory("PersistenciaADUANA");
     }
 
@@ -31,7 +21,7 @@ public class FuncionarioJpaController {
         return emf.createEntityManager();
     }
 
-    // ---------------- MÉTODOS CRUD ----------------
+    // Crear un nuevo funcionario
     public void create(Funcionario funcionario) {
         EntityManager em = null;
         try {
@@ -46,7 +36,8 @@ public class FuncionarioJpaController {
         }
     }
 
-    public void edit(Funcionario funcionario) {
+    // Editar un funcionario existente
+    public void edit(Funcionario funcionario) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -54,7 +45,11 @@ public class FuncionarioJpaController {
             funcionario = em.merge(funcionario);
             em.getTransaction().commit();
         } catch (Exception ex) {
-            throw new RuntimeException("Error al modificar el funcionario: " + ex.getMessage(), ex);
+            String id = funcionario.getCI();
+            if (findFuncionario(id) == null) {
+                throw new NonexistentEntityException("El funcionario con CI " + id + " ya no existe.");
+            }
+            throw ex;
         } finally {
             if (em != null) {
                 em.close();
@@ -62,17 +57,18 @@ public class FuncionarioJpaController {
         }
     }
 
-    public void destroy(String CI) {
+    // Eliminar un funcionario
+    public void destroy(String id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             Funcionario funcionario;
             try {
-                funcionario = em.getReference(Funcionario.class, CI);
-                funcionario.getCI(); // Fuerza la carga del objeto
-            } catch (EntityNotFoundException enfe) {
-                throw new RuntimeException("El funcionario con CI " + CI + " no existe.", enfe);
+                funcionario = em.getReference(Funcionario.class, id);
+                funcionario.getCI();
+            } catch (Exception e) {
+                throw new NonexistentEntityException("El funcionario con CI " + id + " ya no existe.", e);
             }
             em.remove(funcionario);
             em.getTransaction().commit();
@@ -83,50 +79,4 @@ public class FuncionarioJpaController {
         }
     }
 
-    // ---------------- MÉTODOS DE CONSULTA ----------------
-    public List<Funcionario> findFuncionarioEntities() {
-        return findFuncionarioEntities(true, -1, -1);
-    }
-
-    public List<Funcionario> findFuncionarioEntities(int maxResults, int firstResult) {
-        return findFuncionarioEntities(false, maxResults, firstResult);
-    }
-
-    private List<Funcionario> findFuncionarioEntities(boolean all, int maxResults, int firstResult) {
-        EntityManager em = getEntityManager();
-        try {
-            CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Funcionario.class));
-            Query q = em.createQuery(cq);
-            if (!all) {
-                q.setMaxResults(maxResults);
-                q.setFirstResult(firstResult);
-            }
-            return q.getResultList();
-        } finally {
-            em.close();
-        }
-    }
-
-    public Funcionario findFuncionario(String CI) {
-        EntityManager em = getEntityManager();
-        try {
-            return em.find(Funcionario.class, CI);
-        } finally {
-            em.close();
-        }
-    }
-
-    public int getFuncionarioCount() {
-        EntityManager em = getEntityManager();
-        try {
-            CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<Funcionario> rt = cq.from(Funcionario.class);
-            cq.select(em.getCriteriaBuilder().count(rt));
-            Query q = em.createQuery(cq);
-            return ((Long) q.getSingleResult()).intValue();
-        } finally {
-            em.close();
-        }
-    }
 }
