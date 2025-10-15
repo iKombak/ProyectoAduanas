@@ -5,6 +5,7 @@
 package com.mycompany.parkingaduanas.logica;
 
 import com.mycompany.parkingaduanas.persistencia.ControladoraPersistencia;
+import java.util.List;
 import javax.swing.ImageIcon;
 
 /**
@@ -26,5 +27,9 @@ public class Controladora {
         
         controlPersistencia.guardar(func);
     }
+    
+        public List<Funcionario> traerFuncionarios() {
+        return controlPersistencia.traerFuncionarios();
+}
     
 }

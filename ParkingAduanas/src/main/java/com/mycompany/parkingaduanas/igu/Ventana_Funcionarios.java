@@ -5,9 +5,11 @@
 package com.mycompany.parkingaduanas.igu;
 
 import com.mycompany.parkingaduanas.logica.Controladora;
+import com.mycompany.parkingaduanas.logica.Funcionario;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 
@@ -16,17 +18,29 @@ import javax.swing.JFileChooser;
  * @author Brian
  */
 public class Ventana_Funcionarios extends javax.swing.JFrame {
-    
+
+    private List<Funcionario> listaFuncionarios;
     Controladora control = new Controladora();
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ventana_Funcionarios.class.getName());
     private File imagenSeleccionada;
-    
+
     /**
      * Creates new form NewJFrame
      */
     public Ventana_Funcionarios() {
         initComponents();
+        cargarFuncionarios();
+    }
+
+    public void cargarFuncionarios() {
+        listaFuncionarios = control.traerFuncionarios();
+        cmbox_funcionarios.removeAllItems();
+        if (listaFuncionarios != null) {
+            for (Funcionario f : listaFuncionarios) {
+                cmbox_funcionarios.addItem(f.getNombre() + " " + f.getApellido());
+            }
+        }
     }
 
     /**
@@ -89,6 +103,11 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
         });
 
         btn_verInfoFunc.setText("VER INFORMACION");
+        btn_verInfoFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_verInfoFuncActionPerformed(evt);
+            }
+        });
 
         btn_eliminarFunc.setText("ELIMINAR FUNCIONARIO");
 
@@ -125,7 +144,7 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                     .addGroup(pnl_accionesAniadirFuncionariosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pnl_accionesAniadirFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_aniadirfunc, javax.swing.GroupLayout.PREFERRED_SIZE, 163, Short.MAX_VALUE)
+                            .addComponent(btn_aniadirfunc, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                             .addComponent(btn_limpiarfunc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnl_accionesAniadirFuncionariosLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -141,7 +160,7 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                 .addComponent(btn_limpiarfunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_salirdefunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnl_accionesLayout = new javax.swing.GroupLayout(pnl_acciones);
@@ -175,7 +194,7 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
                 .addComponent(btn_verInfoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_eliminarFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(pnl_accionesAniadirFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -428,7 +447,7 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
 
     private void btn_salirdefuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirdefuncActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_btn_salirdefuncActionPerformed
 
     private void btn_limpiarfuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarfuncActionPerformed
@@ -476,10 +495,22 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
         String CI = txt_AniadirCI.getText();
         String correo = txt_AniadirCorreo.getText();
         ImageIcon foto = (ImageIcon) lbl_AniadirFoto.getIcon();
-        
-       control.guardar(CI,nombre,apellido,correo,telefono,foto);
+
+        control.guardar(CI, nombre, apellido, correo, telefono, foto);
     }//GEN-LAST:event_btn_aniadirfuncActionPerformed
 
+    private void btn_verInfoFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verInfoFuncActionPerformed
+        // TODO add your handling code here:
+        int indiceSeleccionado = cmbox_funcionarios.getSelectedIndex();
+        if (indiceSeleccionado >= 0 && listaFuncionarios != null) {
+            Funcionario f = listaFuncionarios.get(indiceSeleccionado);
+            txt_mostrarNombre.setText(f.getNombre());
+            txt_mostrarApellido.setText(f.getApellido());
+            txt_mostrarCI.setText(f.getCI());
+            txt_mostrarCorreo.setText(f.getCorreoElectronico());
+            txt_mostrarTelefono.setText(f.getTelefono());
+        }
+    }//GEN-LAST:event_btn_verInfoFuncActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

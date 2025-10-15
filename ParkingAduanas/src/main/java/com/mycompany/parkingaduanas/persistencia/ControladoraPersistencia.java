@@ -5,6 +5,7 @@
 package com.mycompany.parkingaduanas.persistencia;
 
 import com.mycompany.parkingaduanas.logica.Funcionario;
+import java.util.List;
 
 /**
  *
@@ -16,6 +17,10 @@ public class ControladoraPersistencia {
 
     public void guardar(Funcionario func) {
         funcionarioJpa.create(func);
+    }
+
+    public List<Funcionario> traerFuncionarios() {
+        return funcionarioJpa.findFuncionarioEntities();
     }
     
 }

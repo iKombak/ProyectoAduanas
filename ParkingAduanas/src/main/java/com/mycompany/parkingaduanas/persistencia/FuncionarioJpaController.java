@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 public class FuncionarioJpaController implements Serializable {
 
@@ -81,6 +82,16 @@ public class FuncionarioJpaController implements Serializable {
 
     private Object findFuncionario(String id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public List<Funcionario> findFuncionarioEntities() {
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT f FROM Funcionario f", Funcionario.class);
+            return q.getResultList();
+        } finally {
+            em.close();
+        }
     }
 
 }
