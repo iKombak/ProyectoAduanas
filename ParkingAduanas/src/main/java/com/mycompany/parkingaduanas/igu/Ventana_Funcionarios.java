@@ -17,7 +17,7 @@ import javax.swing.JFileChooser;
  */
 public class Ventana_Funcionarios extends javax.swing.JFrame {
     
-    Controladora control= new Controladora();
+    Controladora control = new Controladora();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ventana_Funcionarios.class.getName());
     private File imagenSeleccionada;
@@ -475,8 +475,9 @@ public class Ventana_Funcionarios extends javax.swing.JFrame {
         String telefono = txt_AniadirTelefono.getText();
         String CI = txt_AniadirCI.getText();
         String correo = txt_AniadirCorreo.getText();
+        ImageIcon foto = (ImageIcon) lbl_AniadirFoto.getIcon();
         
-       control.guardar(CI,nombre,apellido,correo,telefono);
+       control.guardar(CI,nombre,apellido,correo,telefono,foto);
     }//GEN-LAST:event_btn_aniadirfuncActionPerformed
 
 

@@ -1,16 +1,22 @@
 package com.mycompany.parkingaduanas.logica;
 
 import javax.persistence.*;
+import javax.swing.ImageIcon;
 
 @Entity
 public class Funcionario {
     //ATRIBUTOS
+
     @Id
     private String CI;
+    
+    @Basic
     private String nombre;
     private String apellido;
     private String CorreoElectronico;
     private String Telefono;
+    private ImageIcon foto;
+    
     
     //COSTRUCTORES
     //Por Defecto
@@ -24,6 +30,7 @@ public class Funcionario {
         this.apellido = apellido;
         this.CorreoElectronico = CorreoElectronico;
         this.Telefono = Telefono;
+        this.foto = foto;
     }
 
     public String getCI() {
@@ -65,6 +72,18 @@ public class Funcionario {
     public void setTelefono(String Telefono) {
         this.Telefono = Telefono;
     }
+
+
+    public ImageIcon getFoto() {
+        return foto;
+    }
+
+    public void setFoto(ImageIcon foto) {
+        this.foto = foto;
+    }
+
+
+    
 
     
     

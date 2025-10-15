@@ -5,6 +5,7 @@
 package com.mycompany.parkingaduanas.logica;
 
 import com.mycompany.parkingaduanas.persistencia.ControladoraPersistencia;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -13,7 +14,7 @@ import com.mycompany.parkingaduanas.persistencia.ControladoraPersistencia;
 public class Controladora {
     ControladoraPersistencia controlPersistencia = new ControladoraPersistencia();
 
-    public void guardar(String CI, String nombre, String apellido, String correo, String telefono) {
+    public void guardar(String CI, String nombre, String apellido, String correo, String telefono, ImageIcon foto) {
        
         Funcionario func = new Funcionario();
         func.setCI(CI);
@@ -21,6 +22,7 @@ public class Controladora {
         func.setApellido(apellido);
         func.setCorreoElectronico(correo);
         func.setTelefono(telefono);
+        func.setFoto(foto);
         
         controlPersistencia.guardar(func);
     }

@@ -4,7 +4,7 @@
  */
 package com.mycompany.parkingaduanas.logica;
 import java.util.Date;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 /**
  *
