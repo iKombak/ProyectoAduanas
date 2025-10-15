@@ -5,8 +5,10 @@
 package com.mycompany.parkingaduanas.igu;
 
 import com.mycompany.parkingaduanas.logica.Controladora;
+import com.mycompany.parkingaduanas.logica.Funcionario;
 import java.awt.Image;
 import java.io.File;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 
@@ -15,17 +17,29 @@ import javax.swing.JFileChooser;
  * @author Brian
  */
 public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
-    
-    Controladora control= new Controladora();
-    
+
+    private List<Funcionario> listaFuncionarios;
+    Controladora control = new Controladora();
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ventana_AniadirDatosVehiculo.class.getName());
     private File imagenSeleccionada;
-    
+
     /**
      * Creates new form Ventana_AniadirDatosVehiculo
      */
     public Ventana_AniadirDatosVehiculo() {
         initComponents();
+        cargarFuncionarios();
+    }
+
+    private void cargarFuncionarios() {
+        listaFuncionarios = control.traerFuncionarios();
+        cmb_funcionarios.removeAllItems();
+        if (listaFuncionarios != null) {
+            for (Funcionario f : listaFuncionarios) {
+                cmb_funcionarios.addItem(f.getNombre() + " " + f.getApellido());
+            }
+        }
     }
 
     /**
@@ -190,25 +204,23 @@ public class Ventana_AniadirDatosVehiculo extends javax.swing.JFrame {
 
         int resultado = fileChooser.showOpenDialog(this);
         if (resultado == JFileChooser.APPROVE_OPTION) {
-        imagenSeleccionada = fileChooser.getSelectedFile();
-        
-        // Mostrar la imagen en el JLabel
-        ImageIcon icono = new ImageIcon(imagenSeleccionada.getAbsolutePath());
-        Image imagen = icono.getImage().getScaledInstance(
-                lbl_Foto.getWidth(), lbl_Foto.getHeight(), Image.SCALE_SMOOTH);
-        lbl_Foto.setIcon(new ImageIcon(imagen));
-        
+            imagenSeleccionada = fileChooser.getSelectedFile();
+
+            // Mostrar la imagen en el JLabel
+            ImageIcon icono = new ImageIcon(imagenSeleccionada.getAbsolutePath());
+            Image imagen = icono.getImage().getScaledInstance(
+                    lbl_Foto.getWidth(), lbl_Foto.getHeight(), Image.SCALE_SMOOTH);
+            lbl_Foto.setIcon(new ImageIcon(imagen));
+
         }
-        
+
     }//GEN-LAST:event_btn_seleccionarFotoActionPerformed
 
     private void btn_anadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_anadirActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-    }//GEN-LAST:event_btn_anadirActionPerformed
 
+
+    }//GEN-LAST:event_btn_anadirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
